@@ -1,0 +1,230 @@
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&family=Manrope:wght@200..800&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
+
+body{
+    font-family: "League Spartan", sans-serif;
+}
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.theme1{
+--main-background: hsl(222, 26%, 31%);
+--toggle-background-keypad-bg: hsl(223, 31%, 20%); 
+--screen-background: hsl(224, 36%, 15%);
+--key-background: hsl(225, 21%, 49%);
+--key-shadow: hsl(224, 28%, 35%);
+
+--key-background-toggle: hsl(6, 63%, 50%);
+--key-shadow: hsl(6, 70%, 34%);
+
+--key-background: hsl(30, 25%, 89%);
+--key-shadow: hsl(28, 16%, 65%);
+
+
+--Very-dark-grayish-blue: hsl(221, 14%, 31%);
+--White: hsl(0, 0%, 100%);
+}
+
+
+.theme2{
+    --main-background: hsl(0, 0%, 90%);
+    --toggle-background-keypad-bg: hsl(0, 5%, 81%); 
+    --screen-background: hsl(0, 0%, 93%);
+    /**/
+    --key-background: hsl(225, 21%, 49%);
+    --key-shadow: hsl(224, 28%, 35%);
+    
+    --key-background-toggle: hsl(6, 63%, 50%);
+    --key-shadow: hsl(6, 70%, 34%);
+    
+    --key-background: hsl(30, 25%, 89%);
+    --key-shadow: hsl(28, 16%, 65%);
+    
+    
+    --Very-dark-grayish-blue: hsl(221, 14%, 31%);
+    --White: hsl(0, 0%, 100%);
+    }
+
+
+.theme3{
+    --main-background: hsl(268, 75%, 9%);
+    --toggle-background-keypad-bg: hsl(268, 71%, 12%); 
+    --screen-background: hsl(268, 71%, 12%);
+    /**/
+    --key-background: hsl(225, 21%, 49%);
+    --key-shadow: hsl(224, 28%, 35%);
+        
+    --key-background-toggle: hsl(6, 63%, 50%);
+    --key-shadow: hsl(6, 70%, 34%);
+        
+    --key-background: hsl(30, 25%, 89%);
+    --key-shadow: hsl(28, 16%, 65%);
+        
+        
+    --Very-dark-grayish-blue: hsl(221, 14%, 31%);
+    --White: hsl(0, 0%, 100%);
+}
+
+body{
+    height: 100vh;
+    background-color: var(--main-background);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+label, h6{
+    font-size: 13px;
+    color: var(--key-background);
+}
+
+
+.calculator {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    margin: auto;
+    align-items: center;
+}
+
+.header{
+    display: flex;
+    justify-content: space-between;
+    width: 350px;    
+    height: 50px;
+    align-items: center;
+}
+
+.header > h1{
+    color: var(--key-background);  
+    margin-bottom: 5px;
+}
+
+.right{
+    display: flex;
+    justify-content: space-between;
+    width:150px;
+    height: 30px;
+    align-items: center;
+}
+
+.input{
+    height: 40px;
+    width: 80px;
+    border-radius: 30px;
+    background-color: var(--key-shadow);
+}
+
+.label-choice{
+    display: flex;
+}
+
+#theme1,#theme2,#theme3{
+    appearance: none; 
+    width:17px;
+    height: 17px;
+    border-radius: 30px;
+    top:8px;
+    transition: 0.5s;
+}
+
+input:checked{
+    background-color: var(--key-background-toggle);
+}
+
+.label-choice
+{
+    display: flex;
+    justify-content: space-evenly;
+    
+}
+
+.input-choice{
+     display: flex;
+     justify-content:space-evenly
+}
+
+.user-input{
+    background-color: var(--screen-background);
+    height: 80px;
+    width: 100%;
+    border-radius: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right:10px;
+    color:white;
+    overflow: hidden;
+    padding: 10px;
+    font-size: 30px;
+}
+
+.grid-container{
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    grid-template-columns: repeat(4,70px);
+    grid-template-rows: repeat(5, 70px);
+    background-color: var(--toggle-background-keypad-bg);
+    padding: 15px 10px;
+    border-radius: 10px;
+}
+
+.grid-container>button{
+    margin: 0 8px;
+    padding: 6px 0;
+    border-radius: 5px;
+    border: none;
+    background-color: var(--key-background);
+    color: var(--text-color);
+    box-shadow: 0 5px var(--key-shadow);
+    font-weight: 800;
+}
+
+button:active{
+    transform: translateY(2px);
+}
+
+.column-span{
+    grid-column: span 2;
+}
+
+button:nth-child(17), button:nth-child(4){
+    background-color: var(--key-background-toggle);
+    color: var(--bg-keys);
+    box-shadow: 0 5px rgb(54, 0, 0);
+}
+
+button:nth-child(17),button:nth-child(18){
+    grid-column: span 2;
+}
+
+button:nth-child(18){
+    background-color: var(--Very-dark-grayish-blue);
+    color: var(--bg-screen);
+    box-shadow: 0 5px rgb(44, 44, 44);
+}
+
+@media only screen and (min-width: 1200px) {
+    .calculator {
+        width: 350px;
+    }
+
+    .grid-container {
+        grid-template-columns: repeat(4, 82px);
+        grid-template-rows: repeat(5, 65px);
+    }
+    
+    .grid-container > button {
+        margin: 0 8px;
+        padding: 5px 0;
+    }
+
+}
